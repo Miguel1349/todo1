@@ -13,7 +13,7 @@ public class Item {
 	private String name;
 	private String detail;
 	
-	protected Item() { };
+	protected Item() { }
 	
 	public Item(String name, String detail) {
 		this.name = name;
