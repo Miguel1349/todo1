@@ -1,19 +1,30 @@
 package com.todo1.hulk_strore.entities;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "Item")
 public class Item {
 	
 	@Id
 	@GeneratedValue
 	private long id;
+	
 	private String name;
 	private String detail;
+	private boolean soldOut;
 	
-	protected Item() { }
+	@OneToMany(mappedBy = "item", cascade = CascadeType.ALL)
+	private List<Stock> stock;
+	
+	public Item() { }
 	
 	public Item(String name, String detail) {
 		this.name = name;
@@ -44,6 +55,14 @@ public class Item {
 		this.detail = detail;
 	}
 	
+	public boolean isAgotado() {
+		return soldOut;
+	}
+
+	public void setAgotado(boolean soldOut) {
+		this.soldOut = soldOut;
+	}
+
 	@Override
 	public String toString() {
 		return name + ": " + detail;
