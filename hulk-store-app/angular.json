@@ -62,7 +62,8 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "hulk-store-app:build"
+            "browserTarget": "hulk-store-app:build",
+            "proxyConfig": "src/proxy.conf.json"
           },
           "configurations": {
             "production": {
@@ -119,6 +120,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "hulk-store-app"
+    }
+  },
+  "defaultProject": "hulk-store-app",
+  "cli": {
+    "analytics": "deab8a14-2167-4431-87cf-788c5e36c10e"
+  }
 }
