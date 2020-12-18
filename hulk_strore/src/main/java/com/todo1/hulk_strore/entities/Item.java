@@ -6,6 +6,7 @@ import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -23,6 +24,9 @@ public class Item {
 	
 	@OneToMany(mappedBy = "item", cascade = CascadeType.ALL)
 	private List<Stock> stock;
+	
+	@ManyToOne
+	private SoldDetail soldDetail;
 	
 	public Item() { }
 	
@@ -61,6 +65,22 @@ public class Item {
 
 	public void setAgotado(boolean soldOut) {
 		this.soldOut = soldOut;
+	}
+	
+	public SoldDetail getSoldDetail() {
+		return soldDetail;
+	}
+
+	public void setSoldDetail(SoldDetail soldDetail) {
+		this.soldDetail = soldDetail;
+	}
+	
+	public List<Stock> getStock() {
+		return stock;
+	}
+
+	public void setStock(List<Stock> stock) {
+		this.stock = stock;
 	}
 
 	@Override

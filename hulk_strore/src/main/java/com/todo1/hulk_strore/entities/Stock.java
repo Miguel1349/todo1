@@ -24,7 +24,6 @@ public class Stock {
 	private Long value;
 	
 	@ManyToOne
-//	@JoinColumn(name = "ID_ARTICLE", referencedColumnName = "ID")
 	private Item item;
 	
 	public Stock() { }

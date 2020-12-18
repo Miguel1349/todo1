@@ -2,6 +2,8 @@ package com.todo1.hulk_strore;
 
 import java.util.Date;
 
+import javax.xml.soap.Detail;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,8 +11,11 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 import com.todo1.hulk_strore.entities.Item;
+import com.todo1.hulk_strore.entities.SoldHeader;
 import com.todo1.hulk_strore.entities.Stock;
 import com.todo1.hulk_strore.repositories.ItemsRepository;
+import com.todo1.hulk_strore.repositories.SoldDetailRepository;
+import com.todo1.hulk_strore.repositories.SoldHeaderRepository;
 import com.todo1.hulk_strore.repositories.StockRepository;
 
 @Component
@@ -52,4 +57,5 @@ public class DBSeed implements CommandLineRunner {
 		}
 		System.out.println("End of Stock");
 	}
+	
 }
